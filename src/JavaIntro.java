@@ -6,9 +6,46 @@
 import java.util.*;
 
 public class JavaIntro {
+
   public static void main(String[] args) {
-    int[] test = {1,1,1,3,4,3,5,5,5,3,3,1,1,8,2,8,2,8,2,8,2};
-    System.out.println(countRuns(test));
+    Scanner scan = new Scanner(System.in);
+    Random randomNumber = new Random();
+
+    // hilo()
+    System.out.println("Enter a number above 1 for the computer to guess: ");
+    int userSelectedTarget = scan.nextInt();
+    System.out.println("Enter the max number the computer can guess: ");
+    int userSelectedMax = scan.nextInt();
+    hilo(userSelectedMax, userSelectedTarget);
+
+    // rpsls()
+    System.out.println("rock, paper, scissors, lizard, or spock?");
+    String userRpslsChoice = scan.nextLine();
+    String[] computerRpslsChoiceArray = {"rock", "paper", "scissors", "lizard", "spock"};
+    int computerRpslsChoice = randomNumber.nextInt(computerRpslsChoiceArray.length);
+    rpsls(userRpslsChoice, computerRpslsChoiceArray[computerRpslsChoice]);
+
+    // fuzzbizz()
+    System.out.println("Pick a number: ");
+    int userFuzzbizzNumber = scan.nextInt();
+    System.out.println("First Divisor: ");
+    int userFuzzbizzDivisor1 = scan.nextInt();
+    System.out.println("Second Divisor: ");
+    int userFuzzbizzDivisor2 = scan.nextInt();
+    fuzzbizz(userFuzzbizzDivisor1, userFuzzbizzDivisor2, userFuzzbizzNumber);
+
+    // countRuns()
+    System.out.println("How many numbers will be in your set of numbers: ");
+    int userNumberListLength = scan.nextInt();
+    int[] userNumberList = new int[userNumberListLength];
+    for (int i = 0; i < userNumberListLength; i++) {
+      System.out.println("Enter list item #" + (i+1));
+      userNumberList[i] = scan.nextInt();
+    }
+
+    countRuns(userNumberList);
+
+    scan.close();
   }
 
 
@@ -18,10 +55,10 @@ public class JavaIntro {
     int guessMax = max;
     int guessMin = 1;
     int numberOfAttempts = 0;
+    Random randomNumber = new Random();
 
     for (int i = 1; !correct; i++) {
 
-      Random randomNumber = new Random();
       int newGuess = randomNumber.nextInt((guessMax - guessMin) + 1) + guessMin;
       System.out.println("This is guess " + i + " and the number is " + newGuess);
 
@@ -42,7 +79,7 @@ public class JavaIntro {
 
 
 
-  public static int rpssl (String userChoice, String computerChoice) {
+  public static int rpsls (String userChoice, String computerChoice) {
     if (userChoice.equals(computerChoice)) {
       return -1;
     }

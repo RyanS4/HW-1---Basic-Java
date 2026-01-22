@@ -1,8 +1,13 @@
+// Name: Ryan Snyder
+// Computing ID: csp3pn@virginia.edu
+// Homework Name: JavaIntro 
+// Resources Used: N/A
+
 import java.util.*;
 
 public class JavaIntro {
   public static void main(String[] args) {
-    int[] test = {1,1,1,3,4,3,5,5,5,3,3,1,1};
+    int[] test = {1,1,1,3,4,3,5,5,5,3,3,1,1,8,2,8,2,8,2,8,2};
     System.out.println(countRuns(test));
   }
 

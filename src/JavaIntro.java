@@ -1,7 +1,9 @@
 // Name: Ryan Snyder
 // Computing ID: csp3pn@virginia.edu
 // Homework Name: JavaIntro 
-// Resources Used: https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Random.html (for Random object)
+/* Resources Used: https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Random.html (for Random object)
+ * https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html#toLowerCase() (for making rpsls non case sensitive using toLowerCase())
+ */
 
 import java.util.*;
 
@@ -99,16 +101,16 @@ public class JavaIntro {
 
     int winner = 0;
     
-    if ((userChoice.equals("scissors") && computerChoice.equals("paper")) ||
-      (userChoice.equals("paper") && computerChoice.equals("rock")) ||
-      (userChoice.equals("rock") && computerChoice.equals("lizard")) ||
-      (userChoice.equals("lizard") && computerChoice.equals("spock")) ||
-      (userChoice.equals("spock") && computerChoice.equals("scissors")) ||
-      (userChoice.equals("scissors") && computerChoice.equals("lizard")) ||
-      (userChoice.equals("lizard") && computerChoice.equals("paper")) ||
-      (userChoice.equals("paper") && computerChoice.equals("spock")) ||
-      (userChoice.equals("spock") && computerChoice.equals("rock")) ||
-      (userChoice.equals("rock") && computerChoice.equals("scissors"))) {
+    if ((userChoice.toLowerCase().equals("scissors") && computerChoice.toLowerCase().equals("paper")) ||
+      (userChoice.toLowerCase().equals("paper") && computerChoice.toLowerCase().equals("rock")) ||
+      (userChoice.toLowerCase().equals("rock") && computerChoice.toLowerCase().equals("lizard")) ||
+      (userChoice.toLowerCase().equals("lizard") && computerChoice.toLowerCase().equals("spock")) ||
+      (userChoice.toLowerCase().equals("spock") && computerChoice.toLowerCase().equals("scissors")) ||
+      (userChoice.toLowerCase().equals("scissors") && computerChoice.toLowerCase().equals("lizard")) ||
+      (userChoice.toLowerCase().equals("lizard") && computerChoice.toLowerCase().equals("paper")) ||
+      (userChoice.toLowerCase().equals("paper") && computerChoice.toLowerCase().equals("spock")) ||
+      (userChoice.toLowerCase().equals("spock") && computerChoice.toLowerCase().equals("rock")) ||
+      (userChoice.toLowerCase().equals("rock") && computerChoice.toLowerCase().equals("scissors"))) {
       winner = 1;
     }
 

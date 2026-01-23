@@ -1,7 +1,7 @@
 // Name: Ryan Snyder
 // Computing ID: csp3pn@virginia.edu
 // Homework Name: JavaIntro 
-// Resources Used: N/A
+// Resources Used: https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Random.html (for Random object)
 
 import java.util.*;
 
@@ -16,14 +16,26 @@ public class JavaIntro {
     int userSelectedTarget = scan.nextInt();
     System.out.println("Enter the max number the computer can guess: ");
     int userSelectedMax = scan.nextInt();
-    hilo(userSelectedMax, userSelectedTarget);
+    System.out.println("Total attempts for computer to guess: " + hilo(userSelectedMax, userSelectedTarget));
+    System.out.println();
 
     // rpsls()
     System.out.println("rock, paper, scissors, lizard, or spock?");
+    scan.nextLine();
     String userRpslsChoice = scan.nextLine();
     String[] computerRpslsChoiceArray = {"rock", "paper", "scissors", "lizard", "spock"};
-    int computerRpslsChoice = randomNumber.nextInt(computerRpslsChoiceArray.length);
-    rpsls(userRpslsChoice, computerRpslsChoiceArray[computerRpslsChoice]);
+    int computerRpslsChoiceIndex = randomNumber.nextInt(computerRpslsChoiceArray.length);
+    System.out.println("Comptuter chooses " + computerRpslsChoiceArray[computerRpslsChoiceIndex]);
+    int winner = rpsls(userRpslsChoice, computerRpslsChoiceArray[computerRpslsChoiceIndex]);
+    if (winner == -1) {
+      System.out.println("Tie!");
+    } else if (winner == 0) {
+      System.out.println("Computer wins!");
+    } else {
+      System.out.println("You win!");
+    }
+
+    System.out.println();
 
     // fuzzbizz()
     System.out.println("Pick a number: ");
@@ -32,7 +44,8 @@ public class JavaIntro {
     int userFuzzbizzDivisor1 = scan.nextInt();
     System.out.println("Second Divisor: ");
     int userFuzzbizzDivisor2 = scan.nextInt();
-    fuzzbizz(userFuzzbizzDivisor1, userFuzzbizzDivisor2, userFuzzbizzNumber);
+    System.out.println(fuzzbizz(userFuzzbizzDivisor1, userFuzzbizzDivisor2, userFuzzbizzNumber));
+    System.out.println();
 
     // countRuns()
     System.out.println("How many numbers will be in your set of numbers: ");
@@ -43,7 +56,7 @@ public class JavaIntro {
       userNumberList[i] = scan.nextInt();
     }
 
-    countRuns(userNumberList);
+    System.out.println("Number of runs in array: " + countRuns(userNumberList));
 
     scan.close();
   }

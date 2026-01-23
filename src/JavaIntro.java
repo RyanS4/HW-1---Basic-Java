@@ -25,7 +25,7 @@ public class JavaIntro {
     String userRpslsChoice = scan.nextLine();
     String[] computerRpslsChoiceArray = {"rock", "paper", "scissors", "lizard", "spock"};
     int computerRpslsChoiceIndex = randomNumber.nextInt(computerRpslsChoiceArray.length);
-    System.out.println("Comptuter chooses " + computerRpslsChoiceArray[computerRpslsChoiceIndex]);
+    System.out.println("Computer chooses " + computerRpslsChoiceArray[computerRpslsChoiceIndex]);
     int winner = rpsls(userRpslsChoice, computerRpslsChoiceArray[computerRpslsChoiceIndex]);
     if (winner == -1) {
       System.out.println("Tie!");
